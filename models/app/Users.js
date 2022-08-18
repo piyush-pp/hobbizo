@@ -28,11 +28,11 @@ var usersSchema = mongoose.Schema({
     type: String,
     require: true,
   },
-  hobbies: {
-    type: Array,
-    require: true,
-    ref: 'hobbies'
-  },
+  hobbies: [
+    {type: mongoose.Schema.Types.ObjectId,
+       ref:'hobbies',
+       required:true}
+      ],
   latLong: {
     type: Object,
     require: true,
